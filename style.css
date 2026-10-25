@@ -104,7 +104,9 @@ nav > a:not(.nav-logo) {
     font-size: 24px;
     font-weight: 500;
     white-space: nowrap;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
 }
 
 nav > a:hover,
@@ -241,7 +243,7 @@ main.page { padding: 0 20px; }
 }
 
 /* Tools, Woodshop, etc. cards */
-:is(.tools, .woodshop, .sewing, .electronics, .lasers, .printers, .cnc) {
+:is(.tools, .woodshop, .sewing, .electronics, .lasers, .printers, .cnc, .rules, .policies) {
     box-sizing: border-box;
     width: 88%;
     max-width: 1400px;
@@ -262,7 +264,8 @@ main.page { padding: 0 20px; }
 }
 
 /* Left column */
-:is(.tools-left, .woodshop-left, .sewing-left, .electronics-left, .lasers-left, .printers-left, .cnc-left) {
+:is(.tools-left, .woodshop-left, .sewing-left, .electronics-left, .lasers-left, .printers-left, 
+.cnc-left, .rules-left, .policies-left) {
     min-width: 0;
 
     & p {
@@ -281,7 +284,8 @@ main.page { padding: 0 20px; }
 }
 
 /* Right column */
-:is(.tools-right, .woodshop-right, .sewing-right, .electronics-right, .lasers-right, .printers-right, .cnc-right) {
+:is(.tools-right, .woodshop-right, .sewing-right, .electronics-right, .lasers-right, .printers-right, 
+.cnc-right, .rules-right, .policies-right) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -355,7 +359,33 @@ main.page { padding: 0 20px; }
     --bg: #b9d4f5;
     --left-col: 0.7fr;
 }
+.rules {
+    --bg: #ffe9d2;
+    --left-col: 1fr;
+    --right-pad: 0px;
+    align-items: start;
+}
+.rules > h2 {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+.rules-title h2 { margin: 0 0 10px; }
+.rules-gif img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.rules-left ul {
+    padding-left: 20px;
+    margin-top: 0;
+}
+.rules-left li { margin-bottom: 10px; }
 
+
+.policies{
+    --bg: #e8eaf6;
+    --left-col: 0.7fr;
+}
 /* Desktop & Mobile */
 @media (max-width: 800px) {
     #spring-2026-staff,
