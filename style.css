@@ -2,6 +2,7 @@ html {
     min-height: 100%;
     margin: 0;
 }
+
 body {
     font-family: "Urbanist", sans-serif;
     font-weight: 400;
@@ -11,43 +12,105 @@ body {
     color: #001b29;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh;
+    height: 100%;
     margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior-y: none;
-    height: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
-header {
-    padding-top: 30px;
+header { padding-top: 30px; }
+
+h1 { font-size: 3rem;   font-weight: 700; color: #731523; }
+h2 { font-size: 2rem;   font-weight: 600; color: #00507A; }
+h3 { font-size: 1.5rem; font-weight: 500; color: #A04000; }
+
+.banner { text-align: center; }
+
+.support { padding: 0 20px; }
+
+.section-text { min-width: 0; }
+.section-text h2 { margin: 0 0 10px; }
+
+.text-box {
+    max-width: 500px;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #001B29;
+    margin: 0;
 }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #731523;
+.instagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #363737;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 auto;
 }
 
-h2 {
-    font-size: 2rem;
+footer {
+    background-color: #e6e2d0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* Navbar */
+nav {
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    padding: 8px 16px;
+}
+
+nav .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+}
+
+nav .nav-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+}
+
+nav .nav-logo span {
+    font-size: 24px;
     font-weight: 600;
-    color: #00507A;
 }
 
-/*nav h2{
-    font-weight: 400;
-}*/
-
-h3 {
-    font-size: 1.5rem;
+nav > a:not(.nav-logo) {
+    color: white;
+    font-size: 24px;
     font-weight: 500;
-    color: #A04000;
+    white-space: nowrap;
+    text-decoration: none;
 }
 
-/* Faculty/staff directory */
+nav > a:hover,
+nav > a:focus-visible { color: #f6f2df; }
+
+/* Staff page */
 #spring-2026-staff,
 #emeritus {
     display: grid;
@@ -76,9 +139,7 @@ h3 {
     border-radius: 50%;
 }
 
-.staff-member h3 {
-    margin-top: 0;
-}
+.staff-member h3 { margin-top: 0; }
 
 .resource-buttons {
     display: flex;
@@ -98,158 +159,198 @@ h3 {
 }
 
 .resource-buttons a:hover,
-.resource-buttons a:focus-visible {
-    background-color: #731523;
+.resource-buttons a:focus-visible { background-color: #731523; }
+
+/* Home page cards */
+:is(.who, .how, .when, .what, .where) {
+    box-sizing: border-box;
+    width: 88%;
+    max-width: 1400px;
+    margin: 45px auto;
+    padding: 35px;
+    background-color: #E8F3F8;
+    border-radius: 18px;
+    box-shadow: 0 4px 14px rgba(0, 27, 41, 0.08);
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 35px;
 }
 
-@media (max-width: 800px) {
-    #spring-2026-staff,
-    #emeritus {
-        grid-template-columns: 1fr;
-    }
+:is(.who, .how, .when, .what, .where) h2 {
+    color: #134777;
+    margin-top: 0;
+    margin-bottom: 18px;
 }
-.banner{
-    text-align: center;
+
+:is(.who, .how, .when, .what) img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
 }
-/* home page */
-.who, .how, .when, .what, .where, .workshop {
-    align-items: center;
+
+.where iframe {
+    width: 100%;
+    height: 280px;
+    border: 0;
+    border-radius: 12px;
+}
+
+/* Workshop (still a flex row) */
+.workshop {
     display: flex;
+    align-items: center;
     gap: 20px;
     padding: 20px;
 }
 
-.who .section-text, .how .section-text, .when .section-text,
-.what .section-text, .where .section-text, .workshop .section-text,
-.who img, .how img, .when img, .what img, .workshop img,
-.where iframe {
+.workshop .section-text,
+.workshop img {
     flex: 1 1 0;
     min-width: 0;
 }
 
-.who img, .how img, .when img, .what img, .workshop img {
+.workshop img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
 }
 
-.support {
-    padding: 0 20px;
-}
+/* Tactile  */
+main.page { padding: 0 20px; }
 
-.section-text h2 {
-    margin: 0 0 10px;
-}
-
-.text-box {
-    width: auto;
-    height: auto;
-    max-width: 500px;
-}
-/* tactile page */
-main.page {
-    padding: 0 20px;
-}
+.page h2 { clear: both; }
 
 .page img.wrap-right {
     float: right;
     width: 500px;
-    max-width: 40%;            
+    max-width: 40%;
     height: auto;
-    margin: 0 250px 15px 20px; 
+    margin: 0 250px 15px 20px;
 }
+
 .page img.wrap-left {
     float: left;
     width: 500px;
     max-width: 40%;
     height: auto;
-    margin: 0 100px 15px 0;   /* top right bottom left */
+    margin: 0 100px 15px 0;
 }
 
-.page h2 {
-    clear: both;
-}
-.where iframe {
-    width: 100%;
-    height: 450px; 
-    border: 0;
-}
-.instagram {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #363737;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 0 auto;
-}
-nav {
-    background-color: #000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+/* Tools, Woodshop, etc. cards */
+:is(.tools, .woodshop, .sewing, .electronics) {
     box-sizing: border-box;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px 24px;
-
-    padding: 8px 16px;
+    width: 88%;
+    max-width: 1400px;
+    margin: 45px auto;
+    padding: 35px;
+    background-color: var(--bg);
+    border-radius: 18px;
+    box-shadow: 0 4px 14px rgba(0, 27, 41, 0.08);
+    display: grid;
+    grid-template-columns: minmax(0, var(--left-col)) minmax(0, 1fr);
+    align-items: start;
+    gap: 35px;
 }
 
-/* Logo and lab name */
-nav .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    text-decoration: none;
-    color: white;
-    white-space: nowrap;
+:is(.tools, .woodshop) h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
 }
 
-nav .nav-logo img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    display: block;
-}
+/* Left column */
+:is(.tools-left, .woodshop-left, .sewing-left, .electronics-left) {
+    min-width: 0;
 
-nav .nav-logo span {
-    font-size: 24px;
-    font-weight: 600;
-}
-
-/* Navigation links */
-nav > a:not(.nav-logo) {
-    color: white;
-    font-size: 24px;
-    font-weight: 500;
-    white-space: nowrap;
-    text-decoration: none;
-}
-
-nav > a:visited {
-    color: white;
-}
-
-nav > a:hover,
-nav > a:focus-visible {
-    color: #f6f2df;
-}
-
-/* Phone layout */
-@media (max-width: 650px) {
-    body{
-        padding-top: 40px;
+    & p {
+        max-width: var(--text-max, 500px);
+        line-height: 1.6;
+        margin-bottom: 22px;
     }
+
+    & img {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 10px;
+    }
+}
+
+/* Right column */
+:is(.tools-right, .woodshop-right, .sewing-right, .electronics-right) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    padding-top: var(--right-pad, 150px);
+
+    & h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    & table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    & td {
+        vertical-align: top;
+        padding: 0 8px 0 0;
+    }
+
+    & ul {
+        padding-left: 20px;
+        margin-top: 0;
+    }
+
+    & li { margin-bottom: 10px; }
+}
+
+/* Per-section differences */
+.tools {
+    --bg: #daf0e3;
+    --left-col: 0.6fr;
+    --right-pad: 125px;
+    --text-max: none;
+}
+.tools h2 { color: #134777; }
+
+.woodshop {
+    --bg: #fef3ff;
+    --left-col: 0.8fr;
+}
+.woodshop-right > p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sewing {
+    --bg: #feffdc;
+    --left-col: 0.7fr;
+}
+.sewing-left img { margin-bottom: 20px; }
+
+.electronics {
+    --bg: #dff3f3;
+    --left-col: 0.7fr;
+}
+
+/* Desktop & Mobile */
+@media (max-width: 800px) {
+    #spring-2026-staff,
+    #emeritus { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 650px) {
+    body { padding-top: 40px; }
+
     nav {
-        justify-content: center;
         gap: 10px 18px;
         padding: 8px 10px 12px;
     }
@@ -260,333 +361,13 @@ nav > a:focus-visible {
         gap: 8px;
     }
 
-    nav .nav-logo img {
-        width: 32px;
-        height: 32px;
-    }
-
-    nav .nav-logo span {
-        font-size: 14px;
-    }
-
-    nav > a:not(.nav-logo) {
-        font-size: 14px;
-    }
+    nav .nav-logo img { width: 32px; height: 32px; }
+    nav .nav-logo span { font-size: 14px; }
+    nav > a:not(.nav-logo) { font-size: 14px; }
 }
-
-footer {
-    background-color: #e6e2d0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-    box-sizing: border-box;  
-    padding: 20px;            
-}
-
-
-/* WHO, HOW, WHEN, WHAT, WHERE cards */
-
-.who,
-.how,
-.when,
-.what,
-.where {
-    box-sizing: border-box;
-    width: 88%;
-    max-width: 1400px;
-    margin: 45px auto;
-    padding: 35px;
-
-    background-color: #E8F3F8;
-    border-radius: 18px;
-    box-shadow: 0 4px 14px rgba(0, 27, 41, 0.08);
-
-    display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    align-items: center;
-    gap: 35px;
-}
-
-/* Section headings */
-
-.who h2,
-.how h2,
-.when h2,
-.what h2,
-.where h2 {
-    color: #134777;
-    margin-top: 0;
-    margin-bottom: 18px;
-    text-shadow: 4px 6px 12px 0px rgba(0, 0, 255, 0.3);
-}
-/* tools */
-.tools {
-    box-sizing: border-box;
-    width: 88%;
-    max-width: 1400px;
-    margin: 45px auto;
-    padding: 35px;
-
-    background-color: #daf0e3;
-    border-radius: 18px;
-    box-shadow: 0 4px 14px rgba(0, 27, 41, 0.08);
-
-    display: grid;
-    grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr);
-    align-items: start;
-    gap: 35px;
-}
-
-.tools-left {
-    min-width: 0;
-}
-
-.tools h2 {
-    color: #134777;
-    margin-top: 0;
-    margin-bottom: 18px;
-}
-
-.tools-left p {
-    line-height: 1.6;
-    margin-bottom: 22px;
-}
-
-.tools-left img {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.tools-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 0;
-    padding-top: 125px;
-}
-
-.tools-right h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-
-.tools-right table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.tools-right td {
-    vertical-align: top;
-    padding: 0 8px 0 0;
-}
-
-.tools-right ul {
-    padding-left: 20px;
-    margin-top: 0;
-}
-
-.tools-right li {
-    margin-bottom: 10px;
-}
-/* Woodshop */
-.woodshop {
-    box-sizing: border-box;
-    width: 88%;
-    max-width: 1400px;
-    margin: 45px auto;
-    padding: 35px;
-
-    background-color: #fef3ff;
-    border-radius: 18px;
-    box-shadow: 0 4px 14px rgba(0, 27, 41, 0.08);
-
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
-    align-items: start;
-    gap: 35px;
-}
-
-.woodshop-left {
-    min-width: 0;
-}
-
-.woodshop h2 {
-    margin-top: 0;
-    margin-bottom: 18px;
-}
-
-.woodshop-left p {
-    max-width: 500px;
-    line-height: 1.6;
-    margin-bottom: 22px;
-}
-
-.woodshop-left img {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.woodshop-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 0;
-    padding-top: 150px;
-}
-
-.woodshop-right h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.woodshop-right table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.woodshop-right td {
-    vertical-align: top;
-    padding-right: 8px;
-}
-
-.woodshop-right ul {
-    padding-left: 20px;
-    margin-top: 0;
-}
-
-.woodshop-right li {
-    margin-bottom: 10px;
-}
-
-.woodshop-right > p {
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Sewing */
-.sewing {
-    box-sizing: border-box;
-    width: 88%;
-    max-width: 1400px;
-    margin: 45px auto;
-    padding: 35px;
-
-    background-color: #feffdc;
-    border-radius: 18px;
-    box-shadow: 0 4px 14px rgba(0, 27, 41, 0.08);
-
-    display: grid;
-    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
-    align-items: start;
-    gap: 35px;
-}
-
-.sewing-left {
-    min-width: 0;
-}
-
-.sewing-left img {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.sewing-left p {
-    max-width: 500px;
-    line-height: 1.6;
-}
-
-.sewing-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 0;
-    padding-top: 150px;
-}
-
-.sewing-right h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.sewing-right table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.sewing-right td {
-    vertical-align: top;
-    padding-right: 8px;
-}
-
-.sewing-right ul {
-    padding-left: 20px;
-    margin-top: 0;
-}
-
-.sewing-right li {
-    margin-bottom: 10px;
-}
-
-
-/* Text inside each card */
-
-.section-text {
-    min-width: 0;
-}
-
-.text-box {
-    font-size: 20px;
-    line-height: 1.7;
-    color: #001B29;
-    margin: 0;
-}
-
-/* Keep images contained within their cards */
-
-.who img,
-.how img,
-.when img,
-.what img {
-    display: block;
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 12px;
-}
-
-/* Make the map fit the WHERE card */
-
-.where iframe {
-    width: 100%;
-    height: 280px;
-    border: 0;
-    border-radius: 12px;
-}
-
-/* Responsive layout for phones and smaller screens */
 
 @media (max-width: 700px) {
-    .who,
-    .how,
-    .when,
-    .what,
-    .where {
+    :is(.who, .how, .when, .what, .where) {
         width: 92%;
         padding: 22px;
         margin: 25px auto;
@@ -594,35 +375,24 @@ footer {
         gap: 20px;
     }
 
-    .who img,
-    .how img,
-    .when img,
-    .what img,
-    .where iframe {
-        height: 230px;
-    }
+    :is(.who, .how, .when, .what) img,
+    .where iframe { height: 230px; }
 
-    .text-box {
-        font-size: 18px;
-    }
+    .text-box { font-size: 18px; }
+
     .page-banner {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    line-height: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        line-height: 0;
     }
 
     .page-banner img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 350px;
-    object-fit: contain;
-}
-    @media (max-width: 700px) {
-    .page-banner img {
+        display: block;
+        width: 100%;
         height: 200px;
+        max-height: 350px;
+        object-fit: contain;
     }
-}
 }
