@@ -432,7 +432,7 @@ main.page { padding: 0 20px; }
         gap: 20px;
     }
 
-    :is(.electronics, .lasers, .printers, .cnc) :is(table, tbody, tr, td) {
+    :is(.tools, .woodshop, .sewing, .electronics, .lasers, .printers, .cnc) :is(table, tbody, tr, td) {
         display: block;
         width: 100%;
     }
