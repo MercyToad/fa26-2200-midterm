@@ -323,8 +323,7 @@ main.page { padding: 0 20px; }
 .tools {
     --bg: #daf0e3;
     --left-col: 0.6fr;
-    --right-pad: 125px;
-    --text-max: none;
+
 }
 .tools h2 { color: #134777; }
 
