@@ -323,7 +323,6 @@ main.page { padding: 0 20px; }
 .tools {
     --bg: #daf0e3;
     --left-col: 0.6fr;
-
 }
 .tools h2 { color: #134777; }
 
@@ -361,6 +360,11 @@ main.page { padding: 0 20px; }
     --bg: #b9d4f5;
     --left-col: 0.7fr;
 }
+
+.staff-info {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
 .rules {
     --bg: #ffe9d2;
     --left-col: 1fr;
@@ -374,12 +378,9 @@ main.page { padding: 0 20px; }
 .rules-title h2 { margin: 0 0 10px; }
 .rules-gif img {
     display: block;
-    width: 260px;  
+    width: 165px;
     max-width: 100%;
     height: auto;
-    position: relative;
-    top: 5px;
-    left: 130px;
 }
 .rules-left ul {
     padding-left: 20px;
@@ -411,12 +412,12 @@ main.page { padding: 0 20px; }
 
 /* Desktop & Mobile */
 @media (min-width: 701px) {
-    .rules-gif { height: 157px; }   /* about the gif's current height, keeps the row the same */
+    .rules-gif { height: 157px; }
 }
 
 @media (max-width: 800px) {
     #spring-2026-staff,
-    #emeritus { grid-template-columns: 1fr; }
+    #emeritus { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 650px) {
@@ -436,10 +437,17 @@ main.page { padding: 0 20px; }
     nav .nav-logo img { width: 32px; height: 32px; }
     nav .nav-logo span { font-size: 14px; }
     nav > a:not(.nav-logo) { font-size: 14px; }
+    .staff-member { flex-direction: column; }
+
+    .staff-member img {
+        width: 150px;
+        height: 150px;
+        flex: 0 0 auto;
+    }
 }
 
 @media (max-width: 700px) {
-    :is(.who, .how, .when, .what, .where, .tools, .woodshop, .sewing, .electronics, .lasers, .printers, .cnc) {
+    :is(.who, .how, .when, .what, .where, .tools, .woodshop, .sewing, .electronics, .lasers, .printers, .cnc, .rules, .policies) {
         width: 92%;
         padding: 22px;
         margin: 25px auto;
@@ -447,10 +455,17 @@ main.page { padding: 0 20px; }
         gap: 20px;
     }
 
+    :is(.rules-right, .policies-right) {
+        padding-top: 0;
+    }
+
     :is(.tools, .woodshop, .sewing, .electronics, .lasers, .printers, .cnc) :is(table, tbody, tr, td) {
         display: block;
         width: 100%;
     }
+
+    .rules-left ul { margin-bottom: 0; }
+    .rules-right { margin-top: -20px; }
 
     :is(.who, .how, .when, .what) img,
     .where iframe { height: 230px; }
