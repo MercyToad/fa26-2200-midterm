@@ -472,6 +472,20 @@ main.page { padding: 0 20px; }
 
     .text-box { font-size: 18px; }
 
+    .workshop {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .workshop .section-text,
+    .workshop img {
+        flex: none;
+        width: 100%;
+    }
+
+      :is(.support, .workshop) {
+        overflow-wrap: anywhere;
+    }
     .page-banner {
         width: 100%;
         margin: 0;
