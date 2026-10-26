@@ -258,6 +258,7 @@ main.page { padding: 0 20px; }
     grid-template-columns: minmax(0, var(--left-col)) minmax(0, 1fr);
     align-items: start;
     gap: 35px;
+    --right-pad: 40px;
 }
 
 :is(.tools, .woodshop) h2 {
