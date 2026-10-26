@@ -392,6 +392,21 @@ main.page { padding: 0 20px; }
     --bg: #e8eaf6;
     --left-col: 0.7fr;
 }
+.page-banner {
+    width: calc(100% + 40px);   
+    margin: 0 -20px;            
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.page-banner img {
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+}
 
 
 /* Desktop & Mobile */
