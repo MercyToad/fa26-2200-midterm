@@ -415,6 +415,13 @@ main.page { padding: 0 20px; }
     .rules-gif { height: 157px; }
 }
 
+.rules-gif img {
+        width: 240px; 
+        position: relative;
+        top: 20px;
+        left: 40px;
+    }
+
 @media (max-width: 800px) {
     #spring-2026-staff,
     #emeritus { grid-template-columns: minmax(0, 1fr); }
